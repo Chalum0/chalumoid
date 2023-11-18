@@ -2,9 +2,8 @@ from flask import Flask, request, render_template
 
 app = Flask(__name__)
 
-@app.route("/<name>/<second>", methods=["GET"])
-def form(name, second):
-    print(name, second)
+@app.route("/", methods=["GET"])
+def form():
     return render_template("index.html")
 
 
