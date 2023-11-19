@@ -5,7 +5,6 @@
     to { opacity: 1; }
 }
 
-
 html, body, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -81,35 +80,6 @@ time, mark, audio, video, mark {
         color: palevioletred;
     }
 
-    h1 {
-        font-family: "Roboto", sans-serif;
-        font-weight: bold;
-        font-size: 5.5rem
-    }
-
-    h2 {
-        color: dimgray;
-        font-size: 2rem
-    }
-
-    h3 {
-        font-size: 3rem;
-        font-weight: 550;
-    }
-
-    #presentation-div {
-        height: 700px;
-        width: 80%;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-        align-items: center;
-    }
-
-    .background {
-        height: 8000px;
-    }
-
     #top-section {
         background-image: url('../images/index-bg-image.png');
         background-size: cover;
@@ -122,72 +92,86 @@ time, mark, audio, video, mark {
         background: linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
     }
 
-    .scroll-indicator {
-        transform: translateY(50%);
-        width: 5px;
-        min-height: 50vh;
-        height: 50vh;
-        border: 1px black;
-        background: linear-gradient(to bottom, #8B5708, #CFC740);
-        border-radius: 10px;
-        z-index: 1000;
-        margin: auto 20px auto 20px;
-        box-shadow: 0 0 10px #CFC740,
-        0 0 30px #CFC740;
-    }
-
-    #bottom-section {
-        /*border: 2px solid red;*/
-        height: 110vh;
+    #half-page{
+        height: 90%;
+        width: 50%;
         display: flex;
         flex-direction: row;
-        justify-content: flex-start;
-        align-items: flex-end;
+        justify-content: center;
+        align-items: center;
+    }
 
+    #id-div{
+        background: linear-gradient(to bottom left, rgba(139, 87, 8, 0.3), rgba(198, 187, 61, 0.7));
+        border: 2px solid black;
+        border-radius: 8px;
+        height: 50vh;
+        width: 50vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    h1 {
+        font-family: "Roboto", sans-serif;
+        font-weight: bold;
+        font-size: 4rem;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    form{
+        height: 50%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .username, .password{
+        background-color: rgba(0, 0, 0, 0.5);
+        border: 2px solid black;
+        border-radius: 5px;
+        margin-bottom: 5px;
+        width: 80%;
+        height: 20%;
+        outline: none;
+        box-shadow: 3px 3px 10px rgba(255, 255, 255, 0.2);
+        color: white
+    }
+    .submit{
+        height: 20%;
+        background-color: black;
+        color: white;
+        border: 2px solid black;
+        border-radius: 5px;
+        margin-bottom: 5px;
+        width: 30%
+    }
+
+    h2{
+        font-size: 0.8rem;
+    }
+
+    #create-account{
+        color: cornflowerblue;
+        text-decoration: underline;
+    }
+    #thelastdividc{
+        height: 25%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .fade-in {
         animation: fadeIn 2s ease-out; /* 2 seconds animation using fadeIn keyframes */
     }
 
-    #markdown-content {
-        font-family: Arial, sans-serif;
-        line-height: 1.6;
-        padding: 20px;
-        background-color: darkslategrey;
-        border: 5px solid #ddd;
-        border-radius: 5px;
+    .submit{
+        cursor: pointer;
     }
 
-    #code-example-div {
-        /*border: 2px solid red;*/
-        height: 110vh;
-        width: 80%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        /*margin-left: 14%;*/
-    }
-
-    #code-text {
-        /*border: 2px solid red;*/
-        width: 100vh;
-        height: 10vh;
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-        align-items: center;
-    }
-
-    #code-image-div {
-        /*border: 2px solid red;*/
-        width: 100vh;
-        height: 100vh;
-    }
-
-    #code-image {
-        width: 100vh;
-        border: 2px solid black;
-        border-radius: 10px;
-    }
 }

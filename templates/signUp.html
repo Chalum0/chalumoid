@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <link rel="icon" type="image/png" sizes="32x32" href="../static/images/favicon-32x32.png">
+        <link rel="stylesheet" href="../static/css/signUp-style.css">
+    </head>
+    <body>
+        <div id="top-section">
+            <div id="gradian">
+                <nav>
+                    <div id="navbar-left">
+                        <ul>
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/projects">Projects</a></li>
+                            <li><a href="/themagnificentmyself">Who am I?</a></li>
+                        </ul>
+                    </div>
+                    <div id="navbar-right">
+                        <ul>
+                            <li><a href="/signin">Sign in</a></li>
+                        </ul>
+                    </div>
+                </nav>
+
+                <div id="half-page" class="fade-in">
+                    <div id="id-div">
+                        <h1>Welcome!</h1>
+                        <form action="/signup" method="post">
+                            <input class="username" name="username" type="text" required placeholder="Username">
+                            <input class="password" name="password" type="password" required placeholder="Password">
+                            <input class="password" name="password2" type="password" required placeholder="Password">
+                            <input class="submit" name="submit" type="submit" value="Sign up">
+                        </form>
+                        <div id="thelastdividc"><h2>Already an account? <a id="create-account" href="/signup">Log in now!</a></h2></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

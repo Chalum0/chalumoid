@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <title>Hello</title>
         <link rel="icon" type="image/png" sizes="32x32" href="../static/images/favicon-32x32.png">
-        <link rel="stylesheet" href="../static/css/index-style.css">
+        <link rel="stylesheet" href="../static/css/projects-style.css">
         <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js" defer></script>
         <script defer src="../static/JavaScript/index-script.js"></script>
     </head>
@@ -22,35 +22,26 @@
                     </div>
                     <div id="navbar-right">
                         <ul>
-<!--                            {{ code|safe }}-->
                             <li><a href={{button1link}}>{{button1}}</a></li>
                             <li><a href="{{button2link}}">{{button2}}</a></li>
                         </ul>
                     </div>
                 </nav>
                 <div id="presentation-div">
-<!--                    <div class="scroll-indicator fade-in" id="scrollIndicator"></div>-->
-    <!--                <div id="progress-bar-div"><div class="scroll-indicator" id="scrollIndicator"></div></div>-->
                     <div id="presentation-text-div"  class="fade-in">
-                        <h1>Data at the reach of hand.</h1>
-                        <h2>Small projects make the world.</h2>
+                        <h1>My projects over the years.</h1>
+                        <h2>One day, there'll be a lot of them.</h2>
                     </div>
                 </div>
             </div>
         </div>
-
-        <div id="bottom-section" class="fade-in">
-            <div id="code-example-div">
-                <div id="code-text">
-                    <h3>Makes coding easy.</h3>
-                </div>
-                <div id="code-image-div">
-                    <img id="code-image" src="../static/images/code-example.png"  alt="code-example-image">
+        <div id="my-projects-div">
+            <div class="project-div" onclick="location.href='/projects/bazaar-tracker';">
+                <div class="title">
+                    <h3>Bazaar Tracker.</h3>
                 </div>
             </div>
-        </div>
 
-        <div class="background">
         </div>
 
     </body>
