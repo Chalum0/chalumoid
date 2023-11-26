@@ -87,7 +87,10 @@ def projects():
 
 @app.route("/projects/bazaar-tracker")
 def bazaar_tracker():
-    pass
+    if "username" in session:
+        username = session["username"]
+        return render_template("bazaar-index.html", button1="", button2=username, button1link="", button2link="/logout")
+    return render_template("bazaar-index.html", button1="Sign in", button2="Sign up", button1link="/signin", button2link="/signup")
 
 
 if __name__ == "__main__":

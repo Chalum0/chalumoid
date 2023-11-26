@@ -1,0 +1,154 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+
+html, body, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video, mark {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    color: white;
+    text-decoration: none;
+    list-style-type: none;
+    font-family: Arial, sans-serif;
+    background-color: unset;
+}
+
+@media screen and (orientation: landscape) {
+
+    body {
+        background-color: black;
+    }
+
+    nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+    }
+
+    nav > div > ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        margin-top: 10px;
+        font-weight: 650;
+        font-size: 1.2rem;
+    }
+
+    div#navbar-right > ul > li {
+        all: unset;
+        margin-right: 20px;
+        text-decoration: none;
+        padding: 5px
+    }
+
+    div#navbar-left > ul > li {
+        all: unset;
+        margin-left: 20px;
+        text-decoration: none;
+        padding: 5px
+    }
+
+    #navbar-right > ul > li:last-child a {
+        padding: 7px;
+        border: 2px solid white;
+        border-radius: 5px;
+    }
+
+    #navbar-right > ul > li:last-child a:hover {
+        border-color: palevioletred;
+        color: palevioletred;
+    }
+
+    nav a:hover {
+        color: palevioletred;
+    }
+
+    h1 {
+        font-family: "Roboto", sans-serif;
+        font-weight: bold;
+        font-size: 5rem
+    }
+
+    h2 {
+        color: dimgray;
+        font-size: 2rem
+    }
+
+    h3 {
+        font-size: 3rem;
+        font-weight: 550;
+    }
+
+    #top-section {
+        background-image: url('../images/bazaar-bg-image.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 100vh;
+    }
+    #gradian {
+        height: 100vh;
+        background: linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.2) 100%);
+    }
+
+    .fade-in {
+        animation: fadeIn 2s ease-out; /* 2 seconds animation using fadeIn keyframes */
+    }
+
+
+    #presentation-div{
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #bottom-section{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    #tracked-items{
+        width: 75%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    .tracked-item{
+        width: 20%;
+        display: flex;
+        justify-content: center;
+        background-color: #191919;
+        border-radius: 8px;
+    }
+    .tracked-item > p{
+        padding: 10px;
+        font-size: 2vw;
+    }
+
+
+
+}
