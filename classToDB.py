@@ -23,7 +23,8 @@ if __name__ == "__main__":
                     ],
                     "table": [
 
-                    ]
+                    ],
+                    "avg": items[item].get_avg_buy_price()
                 }
             except ZeroDivisionError:
                 pass
