@@ -1,5 +1,5 @@
 import flask
-from flask import Flask, request, render_template, url_for, session, redirect
+from flask import Flask, request, render_template, url_for, session, redirect, jsonify
 from werkzeug.security import generate_password_hash, check_password_hash
 from sqlCommands import *
 import sqlite3
@@ -76,6 +76,14 @@ def login():
 
         return 'Invalid username or password.'
     return render_template('login.html')
+
+
+@app.route("/projects/bazaar-tracker/items/<item>")
+def show_item_page(item):
+    if "username" in session:
+        username = session["username"]
+        return render_template("item-page.html", button1="", button2=username, button1link="", button2link="/logout")
+    return render_template("item-page.html", button1="Sign in", button2="Sign up", button1link="/signin", button2link="/signup")
 
 
 @app.route("/projects")
