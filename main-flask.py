@@ -1,8 +1,9 @@
 import flask
-from flask import Flask, request, render_template, url_for, session, redirect, jsonify
+from flask import Flask, request, render_template, url_for, session, redirect, jsonify, abort
 from werkzeug.security import generate_password_hash, check_password_hash
 from sqlCommands import *
 import sqlite3
+import json
 
 app = Flask(__name__)
 app.secret_key = "masuperclef"
@@ -18,6 +19,10 @@ def init_db():
     conn.execute(innitDataBase)
     conn.commit()
     conn.close()
+
+def convert_string(input_string):
+    output_string = input_string.replace('_', ' ').title()
+    return output_string
 
 @app.route("/", methods=["GET"])
 def form():
@@ -82,8 +87,20 @@ def login():
 def show_item_page(item):
     if "username" in session:
         username = session["username"]
-        return render_template("item-page.html", button1="", button2=username, button1link="", button2link="/logout")
-    return render_template("item-page.html", button1="Sign in", button2="Sign up", button1link="/signin", button2link="/signup")
+        return render_template("item-page.html", button1="", button2=username, button1link="", button2link="/logout", item=convert_string(item))
+    return render_template("item-page.html", button1="Sign in", button2="Sign up", button1link="/signin", button2link="/signup", item=convert_string(item))
+
+
+@app.route("/projects/bazaar-tracker/items/<item>/api")
+def item_api_page(item):
+    with open('files/server-files/save.json', 'r') as f:
+        item_data = json.load(f)
+    print(item)
+    print(item_data.keys())
+    try:
+        return jsonify(item_data[item])
+    except KeyError:
+        abort(404)
 
 
 @app.route("/projects")

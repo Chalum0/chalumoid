@@ -16,11 +16,16 @@ if __name__ == "__main__":
             print(item)
             try:
                 data[item] = {
-                    "graph": [
+                    "graph": {
+                        "data":[
                         items[item].rt_buy_price_getter(),
                         items[item].rt_sell_price_getter(),
                         [items[item].get_avg_buy_price()] * len(items[item].rt_times_getter())
                     ],
+                        "values": [
+                            items[item].rt_times_getter()
+                        ]
+                    },
                     "table": [
 
                     ],

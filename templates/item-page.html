@@ -4,11 +4,11 @@
         <meta charset="UTF-8">
         <title>Hello</title>
         <link rel="icon" type="image/png" sizes="32x32" href="../static/images/favicon-32x32.png">
-        <link rel="stylesheet" href="../static/css/bazaar-item-style.css">
+        <link rel="stylesheet" href="../../../static/css/bazaar-item-style.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js" defer></script>
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js" defer></script>
-        <script src="../static/JavaScript/graph-page-bazaar/graphs.js" defer></script>
-        <script src="../static/JavaScript/graph-page-bazaar/script.js" defer></script>
+        <script src="../../../static/JavaScript/graph-page-bazaar/graphs.js" defer></script>
+        <script src="../../../static/JavaScript/graph-page-bazaar/script.js" defer></script>
     </head>
     <body>
         <div id="top-section">
@@ -41,9 +41,15 @@
                         <div>
                             <div id="top-right-div-left-div">
                                 <div>
+<!--                                    <h1>Enchanted Cobblestone</h1>-->
                                     <h1>{{item}}</h1>
                                 </div>
                                 <div>
+                                    <div>
+                                        <div id="buy-button" class="action-button">
+                                            Buy
+                                        </div>
+                                    </div>
                                     <div>
                                         <form>
                                             <label for="quantity"></label><br>
@@ -51,19 +57,11 @@
                                         </form>
                                     </div>
                                     <div>
-                                        <div id="buy-button" class="action-button">
-                                            Buy
-                                        </div>
-                                    </div>
-                                    <div>
                                         <div id="sell-button" class="action-button">
                                             Sell
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div id="top-right-div-right-div">
-
                             </div>
                         </div>
                     </div>
@@ -74,28 +72,24 @@
                     </div>
                     <div id="bottom-right-div">
                         <div>
-                            <div id="table-button-div">
-                                <div id="table-button-one">
-                                    ah
-                                </div>
-                                <div id="table-button-two">
-                                    ah
-                                </div>
+                            <h2>Buy Orders</h2>
+                            <div>
+                                <table>
+                                    <tr>
+                                        <th id="th1">Amount</th>
+                                        <th id="th2">Price</th>
+                                    </tr>
+<!--                                    <tr>-->
+<!--                                        <td>Data 1</td>-->
+<!--                                        <td>Data 2</td>-->
+
+<!--                                    </tr>-->
+<!--                                    <tr>-->
+<!--                                        <td>Data 3</td>-->
+<!--                                        <td>Data 4</td>-->
+<!--                                    </tr>-->
+                                </table>
                             </div>
-                            <table>
-                                <tr>
-                                    <th id="th1">Header 1</th>
-                                    <th id="th2">Header 2</th>
-                                </tr>
-                                <tr>
-                                    <td>Data 1</td>
-                                    <td>Data 2</td>
-                                </tr>
-                                <tr>
-                                    <td>Data 3</td>
-                                    <td>Data 4</td>
-                                </tr>
-                            </table>
                         </div>
                     </div>
                 </div>
