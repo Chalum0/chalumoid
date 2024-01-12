@@ -1,4 +1,4 @@
-# This is the code for the [chalumoid](chalumoid.fr) website
+# This is the code for the [chalumoid](http://chalumoid.fr) website
 
 ## File structure :
 
