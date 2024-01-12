@@ -185,11 +185,21 @@ function talkToAPI(){
             console.log(error);
             const canva = document.querySelector("#graph");
             const wrapper = document.createElement("a");
-            wrapper.id = "apiErrorText"
+            wrapper.className = "apiErrorText"
             canva.parentNode.insertBefore(wrapper, canva);
             wrapper.parentNode.style.height = "75%"
             canva.remove();
             wrapper.textContent = "Error loading data."
+
+            const insideDiv = document.querySelector("#bottom-right-div>div")
+            const wrapper2 = document.createElement("a")
+            while (insideDiv.firstChild) {
+                insideDiv.removeChild(insideDiv.firstChild);
+            }
+            wrapper2.className = "apiErrorText"
+            insideDiv.appendChild(wrapper2)
+            wrapper2.parentNode.style.height = "75%"
+            wrapper2.textContent = "Error loading data."
         })
 }
 
