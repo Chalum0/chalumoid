@@ -15,6 +15,9 @@ if __name__ == "__main__":
         for item in items:
             print(item)
             try:
+
+                buy_orders = items[item].buy_orders_getter()
+                # print([[a, p] for a, p, oR in o for o in items[item].buy_orders_getter()])
                 data[item] = {
                     "graph": {
                         "data":[
@@ -27,7 +30,7 @@ if __name__ == "__main__":
                         ]
                     },
                     "table": [
-
+                        [o["amount"], o["pricePerUnit"]] for o in buy_orders
                     ],
                     "avg": items[item].get_avg_buy_price()
                 }

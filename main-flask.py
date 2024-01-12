@@ -1,6 +1,7 @@
 import flask
 from flask import Flask, request, render_template, url_for, session, redirect, jsonify, abort
 from werkzeug.security import generate_password_hash, check_password_hash
+# from flask_cors import CORS
 from sqlCommands import *
 import sqlite3
 import json
@@ -8,6 +9,7 @@ import json
 app = Flask(__name__)
 app.secret_key = "masuperclef"
 alphabet = [chr(i) for i in range(ord('a'),ord('z')+1)] + ["_", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
+# CORS(app)
 
 def get_db_connection():
     conn = sqlite3.connect('files/server-files/user.db')

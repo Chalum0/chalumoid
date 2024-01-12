@@ -27,6 +27,7 @@ buyButton.addEventListener("click", ()=>{
         amounts[item].values.shift()
         createChart(amounts[item].values, amounts[item].bottomValues, "Stock", document.querySelector("#graph2"))
         localStorage.setItem("amounts", JSON.stringify(amounts))
+        document.querySelector("#quantity").value = ""
     }
 })
 
@@ -39,6 +40,7 @@ sellButton.addEventListener("click", ()=>{
         amounts[item].values.shift()
         createChart(amounts[item].values, amounts[item].bottomValues, "Stock", document.querySelector("#graph2"))
         localStorage.setItem("amounts", JSON.stringify(amounts))
+        document.querySelector("#quantity").value = ""
     }
 })
 
@@ -157,24 +159,36 @@ function talkToAPI(){
     axios.get(`http://chalumoid.fr/projects/bazaar-tracker/items/${item}/api`)
         .then(function (response) {
             const apiData = response.data
+            console.log(apiData)
 
             // --CREATE GRAPH FROM API DATA
-            let graphData = apiData //apiData.graph
-            create_chart(graphData.graphDatas[0][0], graphData.graphDatas[0][1], graphData.graphDatas[0][2], graphData.graphBottomData[0], document.querySelector("#graph"))
+            let graphData = apiData.graph
+            create_chart(graphData.data[0], graphData.data[1], graphData.data[2], graphData.values[0], document.querySelector("#graph"))
 
 
 
             // --CREATE TABLE FROM API DATA
-            // const table = document.querySelector("table")
-            // let tableData = apiData.table
-            // for (let v of tableData.buy) {
-            //     let td1 = document.createElement("td")
-            //     td1.textContent = v[0]
-            //     let td2 = document.createElement("td")
-            //     td2.textContent = v[1]
-            //
-            //     table.appendChild(document.createElement("tr").appendChild(td1).appendChild(td2))
-            // }
+            const table = document.querySelector("table")
+
+            let rows = table.querySelectorAll("tr");
+
+            for(let i = rows.length - 1; i > 0; i--) {
+                rows[i].parentNode.removeChild(rows[i]);
+            }
+
+            let tableData = apiData.table
+            for (let i = 0; i < 5; i++) {
+                let td1 = document.createElement("td")
+                td1.textContent = tableData[i][0]
+                let td2 = document.createElement("td")
+                td2.textContent = tableData[i][1]
+
+                let tr = document.createElement("tr")
+                tr.appendChild(td1)
+                tr.appendChild(td2)
+
+                table.appendChild(tr)
+            }
 
 
 
